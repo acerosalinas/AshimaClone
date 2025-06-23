@@ -697,17 +697,19 @@ main.contact-main {
   position: relative;
 }
 
+/* --- MODIFIED LOGIN CARD WIDTH --- */
 .login-card {
   display: flex;
   box-shadow: 0 6px 40px 0 rgba(30,40,70,0.13);
   border-radius: 0;
   overflow: hidden;
-  width: 600px;
+  width: 750px; /* widened by at least 1 inch (~96px more) */
   max-width: 98vw;
   min-height: 430px;
   background: transparent;
 }
 
+/* --- LOGIN LEFT MODIFIED FOR WELCOME MESSAGE --- */
 .login-left {
   background: #1b263b;
   flex: 1 1 0;
@@ -719,64 +721,52 @@ main.contact-main {
   align-items: center;
   padding: 2.4rem 1.6rem;
 }
-.portal-btn {
+.login-welcome-message {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
   width: 100%;
-  max-width: 220px;
-  background: transparent;
-  color: #19e0c1;
-  border: 1.7px solid #19e0c1;
-  border-radius: 5px;
-  margin-bottom: 1.2rem;
-  padding: 0.55rem 0;
-  font-size: 0.97rem;
-  font-family: 'Montserrat', Arial, sans-serif;
-  transition: background 0.18s, color 0.18s, border 0.15s;
-}
-.portal-btn:last-child {
-  margin-bottom: 0;
-}
-.portal-btn:hover, .portal-btn:focus {
-  background: #19e0c1;
-  color: #222e38;
-  border-color: #19e0c1;
-  outline: none;
 }
 
+/* --- LOGIN RIGHT MODIFIED FONTS --- */
 .login-right {
   background: #fff;
   flex: 1 1 0;
-  min-width: 270px;
-  max-width: 330px;
-  padding: 2.5rem 2.2rem 2.2rem 2.2rem;
+  min-width: 320px;
+  max-width: 420px;
+  padding: 2.2rem 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .login-logo {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   margin-bottom: 0.3rem;
 }
 .login-brand {
-  font-size: 2rem;
-  font-weight: 400;
-  color: #2f6271;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #222843; /* darkened for visibility */
   margin-bottom: 1.1rem;
   text-align: center;
   font-family: 'Montserrat', Arial, sans-serif;
-  letter-spacing: -1px;
+  letter-spacing: 2px;
 }
 .brand-accent {
-  color: #38c5b6;
-  font-weight: 400;
+  color: #df9641;
+  font-weight: 700;
 }
 
 .login-subtitle {
-  color: #19e0c1;
-  font-size: 1.08rem;
-  font-weight: 500;
+  color: #333; /* darkened for visibility */
+  font-size: 1.05rem;
+  font-weight: 600;
   margin-bottom: 1.2rem;
+  letter-spacing: 1px;
 }
 
 .login-form {
@@ -814,8 +804,10 @@ main.contact-main {
   cursor: pointer;
 }
 
+/* --- MODIFIED FORGOT LINK COLOR --- */
 .forgot-link {
-  color: #19e0c1;
+  color: #2e4053 !important; /* darken for visibility */
+  font-weight: 600;
   font-size: 0.98rem;
   text-decoration: none;
   margin-top: 0.5rem;
@@ -824,7 +816,7 @@ main.contact-main {
   transition: color 0.15s;
 }
 .forgot-link:hover {
-  color: #15b7c7;
+  color: #138496 !important;
   text-decoration: underline;
 }
 
