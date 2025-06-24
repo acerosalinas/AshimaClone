@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Bebas+Neue&display=swap');
 
 /*General Layout and Base Styles*/
 html, body {
@@ -142,7 +142,6 @@ body, body * {
   }
 }
 
-/*Responsive intro images for sections*/
 .intro-image,
 .img-fluid.rounded.shadow {
   max-width: 100%;
@@ -278,7 +277,7 @@ footer a:hover {
   }
 }
 
-/*Service Portal Page Custom Styles*/
+/*Service Portal Page*/
 body.service-portal-bg {
   background: radial-gradient(ellipse at top left, #234854 0%, #1b2d3a 100%);
   min-height: 100vh;
@@ -341,7 +340,7 @@ body.service-portal-bg {
   }
 }
 
-/*Pricing Page Custom Styles*/
+/*Pricing Page*/
 main.pricing-main {
   flex: 1 0 auto;
   display: flex;
@@ -399,7 +398,7 @@ main.pricing-main {
   main.pricing-main { min-height: 60vh; }
 }
 
-/*Contact & Location Page Custom Styles*/
+/*Contact & Location Page*/
 main.contact-main {
   flex: 1 0 auto;
   display: flex;
@@ -537,7 +536,7 @@ main.contact-main {
   }
 }
 
-/* Get Started Modal Custom Styling */
+/* Get Started */
 .get-started-modal-content {
   border-radius: 14px;
   box-shadow: 0 8px 32px rgba(44,62,80,0.12);
@@ -686,8 +685,36 @@ main.contact-main {
   .story-card img { width: 100%; height: 60px; }
 }
 
-/* Login page styles */
-/* Center login card perfectly */
+body.login-page,
+body.login-page .login-outer {
+  padding-top: 0 !important;
+  min-height: 100vh;
+  min-width: 100vw;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body, body * {
+  font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.6);
+}
+
 .login-outer {
   min-height: 100vh;
   width: 100vw;
@@ -697,78 +724,94 @@ main.contact-main {
   position: relative;
 }
 
-/* --- MODIFIED LOGIN CARD WIDTH --- */
 .login-card {
   display: flex;
+  width: 750px;
+  max-width: 98vw;
+  height: 520px; 
+  min-height: 400px;
   box-shadow: 0 6px 40px 0 rgba(30,40,70,0.13);
   border-radius: 0;
   overflow: hidden;
-  width: 750px; /* widened by at least 1 inch (~96px more) */
-  max-width: 98vw;
-  min-height: 430px;
   background: transparent;
+  margin: auto;
 }
 
-/* --- LOGIN LEFT MODIFIED FOR WELCOME MESSAGE --- */
+.login-left, .login-right {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
 .login-left {
   background: #1b263b;
-  flex: 1 1 0;
-  min-width: 230px;
-  max-width: 270px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2.4rem 1.6rem;
-}
-.login-welcome-message {
-  text-align: center;
-  font-size: 1.3rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #fff;
-  width: 100%;
+  height: 100%;
 }
 
-/* --- LOGIN RIGHT MODIFIED FONTS --- */
 .login-right {
   background: #fff;
-  flex: 1 1 0;
-  min-width: 320px;
-  max-width: 420px;
-  padding: 2.2rem 2.5rem;
+  flex-direction: column;
+  height: 100%;
+}
+
+.welcome-typewriter {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  background: #1b263b;
 }
+
+.welcome-typewriter span {
+  display: block;
+  font-family: 'Bebas Neue', 'Montserrat', Arial, sans-serif;
+  font-size: 2.5rem;
+  color: #ffbb00;
+  letter-spacing: 2px;
+  margin-bottom: 0.4rem;
+}
+
+#typewriter {
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #ffbb00;
+  font-size: 1.18rem;
+  letter-spacing: .08em;
+}
+
 .login-logo {
   width: 48px;
   height: 48px;
   margin-bottom: 0.3rem;
 }
 .login-brand {
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   font-weight: 700;
-  color: #222843; /* darkened for visibility */
+  color: #222843;
   margin-bottom: 1.1rem;
   text-align: center;
   font-family: 'Montserrat', Arial, sans-serif;
   letter-spacing: 2px;
 }
 .brand-accent {
-  color: #df9641;
+  color: #ffbb00 !important;
   font-weight: 700;
 }
-
 .login-subtitle {
-  color: #333; /* darkened for visibility */
-  font-size: 1.05rem;
-  font-weight: 600;
+  color: #222843;
+  font-size: 1.2rem;
+  font-weight: 700;
   margin-bottom: 1.2rem;
   letter-spacing: 1px;
+  text-align: center;
 }
-
 .login-form {
   width: 100%;
   max-width: 250px;
@@ -804,13 +847,12 @@ main.contact-main {
   cursor: pointer;
 }
 
-/* --- MODIFIED FORGOT LINK COLOR --- */
 .forgot-link {
-  color: #2e4053 !important; /* darken for visibility */
+  color: #2e4053 !important;
   font-weight: 600;
-  font-size: 0.98rem;
+  font-size: 0.70rem;
   text-decoration: none;
-  margin-top: 0.5rem;
+  margin-top: 0.35rem;
   margin-bottom: 1.1rem;
   display: inline-block;
   transition: color 0.15s;
@@ -819,7 +861,6 @@ main.contact-main {
   color: #138496 !important;
   text-decoration: underline;
 }
-
 .login-btn {
   width: 100%;
   border-radius: 5px;
@@ -841,30 +882,42 @@ main.contact-main {
   font-size: 1.18em;
 }
 
-@media (max-width: 800px) {
+/* Responsive adjustments */
+@media (max-width: 900px) {
   .login-card {
+    width: 98vw;
+    max-width: 98vw;
     flex-direction: column;
-    width: 95vw;
     min-height: unset;
-    max-width: 370px;
+    height: auto;
   }
   .login-left, .login-right {
+    width: 100vw;
     max-width: 100vw;
     min-width: 0;
     border-radius: 0;
-    padding: 2.2rem 1.2rem;
+    padding: 2rem 1rem;
+    height: auto;
   }
-  .login-form {
-    max-width: 100%;
+  .welcome-typewriter span {
+    font-size: 2rem;
   }
+  .login-brand { font-size: 2rem; }
 }
-@media (max-width: 420px) {
+
+@media (max-width: 600px) {
   .login-card {
-    max-width: 99vw;
-    width: 99vw;
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 0;
+    border-radius: 0;
   }
   .login-left, .login-right {
-    padding: 1.2rem 0.2rem;
+    padding: 1.2rem 0.4rem;
+    font-size: 0.97rem;
+  }
+  .welcome-typewriter span {
+    font-size: 1.5rem;
   }
   .login-brand { font-size: 1.3rem; }
 }

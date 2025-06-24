@@ -7,28 +7,29 @@
   <link rel="stylesheet" href="css/style.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Add Montserrat and Bebas Neue for creative heading font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="login-page">
   <!-- Video Background -->
   <video autoplay muted loop playsinline id="bg-video">
     <source src="assets/BackgroundVid.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <div class="login-outer">
-    <div class="login-card d-flex">
+    <div class="login-card">
       <!-- Left Section -->
-      <div class="login-left flex-grow-1 flex-shrink-1" style="min-width:180px;">
-        <div class="login-welcome-message">
-          WELCOME<br>
-          PAMS - Employee Portal
+      <div class="login-left">
+        <div class="welcome-typewriter">
+          <span>WELCOME</span>
+          <span id="typewriter"></span>
         </div>
       </div>
       <!-- Right Section -->
-      <div class="login-right flex-grow-1" style="padding: 2.2rem 2.5rem;min-width:320px;">
+      <div class="login-right">
         <img src="assets/logo.png" alt="ScriptWhiz Logo" class="login-logo" style="height:48px; width:auto; margin-bottom:8px;">
         <div class="login-brand">
-          Script<span class="brand-accent">Whiz</span>
+          Script<span class="brand-accent gold-text">Whiz</span>
         </div>
         <div class="login-subtitle">sign in to continue</div>
         <form class="login-form">
@@ -67,6 +68,38 @@
         icon.classList.add('bi-eye');
       }
     }
+
+    // Typewriter Loop Animation
+    const txt = "PAMS - Employee Portal";
+    const speed = 120;   // typing speed in ms
+    const pause = 3000;  // pause at end in ms
+    let i = 0;
+    let forward = true;
+
+    function typeWriter() {
+      const el = document.getElementById("typewriter");
+      if (!el) return;
+      if (forward) {
+        if (i <= txt.length) {
+          el.innerHTML = txt.substring(0, i) + '<span style="border-right: .15em solid #df9641"></span>';
+          i++;
+          setTimeout(typeWriter, speed);
+        } else {
+          forward = false;
+          setTimeout(typeWriter, pause);
+        }
+      } else {
+        if (i >= 0) {
+          el.innerHTML = txt.substring(0, i) + '<span style="border-right: .15em solid #df9641"></span>';
+          i--;
+          setTimeout(typeWriter, speed/2);
+        } else {
+          forward = true;
+          setTimeout(typeWriter, pause/2);
+        }
+      }
+    }
+    typeWriter();
   </script>
 </body>
 </html>
