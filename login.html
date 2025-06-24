@@ -80,7 +80,7 @@
       if (!el) return;
       if (forward) {
         if (i <= txt.length) {
-          el.innerHTML = txt.substring(0, i) + '<span style="border-right: .15em solid #df9641"></span>';
+          el.innerHTML = txt.substring(0, i) + '<span style="border-right: .15em solid #ffbb00"></span>';
           i++;
           setTimeout(typeWriter, speed);
         } else {
@@ -89,7 +89,7 @@
         }
       } else {
         if (i >= 0) {
-          el.innerHTML = txt.substring(0, i) + '<span style="border-right: .15em solid #df9641"></span>';
+          el.innerHTML = txt.substring(0, i) + '<span style="border-right: .15em solid #ffbb00"></span>';
           i--;
           setTimeout(typeWriter, speed/2);
         } else {
